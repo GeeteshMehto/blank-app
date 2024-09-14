@@ -8,61 +8,39 @@ logout_url = "http://127.0.0.1:8000/logout"  # Change to your Django logout URL
 if 'user_info' not in st.session_state:
     st.session_state['user_info'] = None
 
-# Add custom CSS for navbar and page styling
-def add_custom_styles():
+# Add custom CSS to change the background color
+def add_background_color():
+    # Change the background color here (e.g., #d4e6f2 for a light blue background)
+    background_color = "#d4e6f2"
     st.markdown(
-        """
+        f"""
         <style>
-        /* Navbar styling */
-        .navbar {
-            background-color: powderblue;
-            padding: 10px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+        .stApp {{
+            background-color: {background_color};
             color: black;
-        }
+        }}
 
-        /* General page styling */
-        .stApp {
-            background-color: #d4e6f2;
-            color: black;
-        }
-
-        /* Button styling */
-        div.stButton > button {
+        /* Style buttons */
+        div.stButton > button {{
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 0.75em 1.5em;  /* Increased padding for a more prominent button */
-            border-radius: 8px;  /* Increased border radius for a rounded look */
+            padding: 0.5em 1em;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;  /* Adjust font size for better readability */
-            font-weight: bold;  /* Bold font for emphasis */
-            transition: background-color 0.3s, transform 0.3s;  /* Smooth transition for hover effects */
-        }
+        }}
 
-        div.stButton > button:hover {
+        div.stButton > button:hover {{
             background-color: #0056b3;
-            transform: scale(1.05);  /* Slightly enlarge button on hover */
-        }
-
-        /* Header and subheader styling */
-        .main-header {
-            color: black;
-        }
-        
-        .sub-header {
-            color: blue;
-        }
+        }}
         </style>
         """,
         unsafe_allow_html=True
     )
 
 def display_page():
-    # Add custom styles
-    add_custom_styles()
+    # Add background color
+    add_background_color()
     
     # Check if the user is logged in
     if st.session_state['user_info']:
@@ -71,8 +49,8 @@ def display_page():
         st.markdown(f"[Logout]({logout_url})")
     else:
         # Display information and login button if the user is not logged in
-        st.markdown('<h1 class="main-header">Welcome to [Platform Name]</h1>', unsafe_allow_html=True)
-        st.markdown('<h2 class="sub-header">Bridging the Gap in Healthcare</h2>', unsafe_allow_html=True)
+        st.title("Welcome to [Platform Name]")
+        st.header("Bridging the Gap in Healthcare")
         st.markdown(
             """
             Are you a **hospital** or a **medical expert** looking to provide high-quality healthcare services to patients, no matter their location?  
@@ -86,9 +64,15 @@ def display_page():
             """
         )
         
-        # Provide a link for login
-        login_link = f'<a href="{login_url}" target="_blank"><button>Login</button></a>'
-        st.markdown(login_link, unsafe_allow_html=True)
+        # Inject JavaScript to auto-redirect to login on button click
+        if st.button("Login"):
+            # JavaScript to auto-redirect
+            redirect_script = f"""
+            <script type="text/javascript">
+                window.location.href = "{login_url}";
+            </script>
+            """
+            st.markdown(redirect_script, unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
