@@ -13,14 +13,15 @@ def add_custom_styles():
     st.markdown(
         """
         <style>
-        /* Navbar styling */
+         /* Navbar styling */
         .navbar {
-            background-color: powderblue;
+            background-color: powderblue; /* Change to powder blue */
             padding: 10px;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
             color: black;
+        };
         }
 
         /* General page styling */
@@ -49,7 +50,7 @@ def add_custom_styles():
 
         /* Header and subheader styling */
         .main-header {
-            color: blue;
+            color: black;
         }
         
         .sub-header {
