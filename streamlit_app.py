@@ -30,16 +30,18 @@ def add_custom_styles():
         }
 
         /* Button styling */
-        div.stButton > button {
+        .button-link {
+            display: inline-block;
             background-color: #007bff;
             color: white;
-            border: none;
             padding: 0.5em 1em;
             border-radius: 5px;
-            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
         }
 
-        div.stButton > button:hover {
+        .button-link:hover {
             background-color: #0056b3;
         }
 
@@ -85,9 +87,8 @@ def display_page():
             """
         )
         
-        # Inject JavaScript to auto-redirect to login on button click
-        if st.button("Login"):
-            st.markdown(f'<script type="text/javascript">window.location.href = "{login_url}";</script>', unsafe_allow_html=True)
+        # Anchor tag styled as a button
+        st.markdown(f'<a href="{login_url}" class="button-link">Login</a>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
