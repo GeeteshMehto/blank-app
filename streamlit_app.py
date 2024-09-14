@@ -49,7 +49,7 @@ def add_custom_styles():
 
         /* Header and subheader styling */
         .main-header {
-            color: black;
+            color: blue;
         }
         
         .sub-header {
