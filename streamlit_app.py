@@ -83,7 +83,7 @@ def display_page():
         )
         
         # Anchor tag styled without default styling
-        st.markdown(f'<a href="{login_url}" class="no-style-link">Login</a>', unsafe_allow_html=True)
+        st.markdown(f'<a href="{login_url}" class="no-style-link"><button>Login</button></a>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
