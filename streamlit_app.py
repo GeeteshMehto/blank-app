@@ -1,8 +1,8 @@
 import streamlit as st
 
 # Assuming you have these URLs set in your Django backend
-login_url = "http://localhost:8000/login"  # Change to your Django login URL
-logout_url = "http://localhost:8000/logout"  # Change to your Django logout URL
+login_url = "http://127.0.0.1:8000/login"  # Change to your Django login URL
+logout_url = "http://127.0.0.1:8000/logout"  # Change to your Django logout URL
 
 # Initialize session state for the user
 if 'user_info' not in st.session_state:
