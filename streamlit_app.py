@@ -13,15 +13,14 @@ def add_custom_styles():
     st.markdown(
         """
         <style>
-         /* Navbar styling */
+        /* Navbar styling */
         .navbar {
-            background-color: powderblue; /* Change to powder blue */
+            background-color: powderblue;
             padding: 10px;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
             color: black;
-        };
         }
 
         /* General page styling */
