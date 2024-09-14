@@ -33,7 +33,7 @@ def add_custom_styles():
         .button-link {
             display: inline-block;
             background-color: #007bff;
-            color: white;
+            color: white;  /* Ensure text color is white */
             padding: 0.5em 1em;
             border-radius: 5px;
             text-decoration: none;
