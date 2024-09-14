@@ -82,16 +82,9 @@ def display_page():
             """
         )
         
-        # Inject JavaScript to auto-redirect to login on button click
-        if st.button("Login"):
-            # JavaScript to auto-redirect
-            redirect_script = f"""
-            <script type="text/javascript">
-                window.location.href = "{login_url}";
-            </script>
-            """
-            # Use st.write to render the script correctly
-            st.write(redirect_script, unsafe_allow_html=True)
+        # Provide a link for login
+        login_link = f'<a href="{login_url}" target="_blank"><button>Login</button></a>'
+        st.markdown(login_link, unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
