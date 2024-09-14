@@ -61,8 +61,8 @@ def display_page():
     add_custom_styles()
 
     # Navbar
-    # st.markdown('<div class="navbar">[Platform Name] - Telemedicine</div>', unsafe_allow_html=True)
-    
+    st.markdown('<div class="navbar">[Platform Name] - Telemedicine</div>', unsafe_allow_html=True)
+
     # Check if the user is logged in
     if st.session_state['user_info']:
         # Display welcome message if the user is logged in
@@ -87,13 +87,7 @@ def display_page():
         
         # Inject JavaScript to auto-redirect to login on button click
         if st.button("Login"):
-            # JavaScript to auto-redirect
-            redirect_script = f"""
-            <script type="text/javascript">
-                window.location.href = "{login_url}";
-            </script>
-            """
-            st.markdown(redirect_script, unsafe_allow_html=True)
+            st.markdown(f'<script type="text/javascript">window.location.href = "{login_url}";</script>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
