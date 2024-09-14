@@ -14,7 +14,7 @@ def add_custom_styles():
         """
         <style>
         /* Navbar styling */
-        .navbar {
+        .custom-navbar {
             background-color: powderblue;
             padding: 10px;
             text-align: center;
@@ -63,6 +63,16 @@ def add_custom_styles():
 def display_page():
     # Add custom styles
     add_custom_styles()
+    
+    # Add a custom navbar using HTML
+    st.markdown(
+        """
+        <div class="custom-navbar">
+            My Custom Navbar
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
     
     # Check if the user is logged in
     if st.session_state['user_info']:
