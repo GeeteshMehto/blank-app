@@ -62,7 +62,7 @@ def display_page():
     add_custom_styles()
 
     # Navbar
-    st.markdown('<div class="navbar">[Platform Name] - Telemedicine</div>', unsafe_allow_html=True)
+    # st.markdown('<div class="navbar">[Platform Name] - Telemedicine</div>', unsafe_allow_html=True)
 
     # Check if the user is logged in
     if st.session_state['user_info']:
