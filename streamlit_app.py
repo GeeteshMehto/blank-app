@@ -1,41 +1,35 @@
 import streamlit as st
 
+# Assuming you have these URLs set in your Django backend
+login_url = "http://localhost:8000/login"  # Change to your Django login URL
+logout_url = "http://localhost:8000/logout"  # Change to your Django logout URL
 
+# Initialize session state for the user
+if 'user_info' not in st.session_state:
+    st.session_state['user_info'] = None
 
-# Set up the page configuration
-st.set_page_config(
-    page_title="Welcome to Our App",
-    page_icon="✨",
-    layout="centered",
-)
+def display_page():
+    # Check if the user is logged in
+    if st.session_state['user_info']:
+        # Display welcome message if user is logged in
+        st.title(f"Welcome {st.session_state['user_info']['name']}!")
+        st.markdown(f"[Logout]({logout_url})")
+    else:
+        # Display login button if user is not logged in
+        st.title("Welcome Guest")
+        if st.button("Login"):
+            # Redirect to the login URL (Django Auth0 endpoint)
+            st.write(f"[Redirecting to login...]({login_url})")
 
-# Display a header
-st.title("Welcome to Our Platform")
-st.markdown("""
-## Your One-Stop Solution for [Insert Service Here]
-Discover the power of AI-driven solutions tailored to your needs. 
-We offer a range of services to enhance your business processes 
-and deliver remarkable results.
+def main():
+    st.set_page_config(
+        page_title="Auth0 Example",
+        page_icon="🔐",
+        layout="centered",
+    )
+    
+    # Display the appropriate page based on login state
+    display_page()
 
----
-
-### Why Choose Us?
-- **Custom Solutions:** Tailored to your specific requirements.
-- **Scalable:** Flexible to grow with your business.
-- **Secure:** Data privacy and security are our top priorities.
-
-Ready to get started? Click the login button below to access your personalized dashboard.
-""")
-
-# Add some spacing
-st.write("")
-
-# Create a login button
-login_url = "https://YOUR-AUTH0-DOMAIN/authorize?client_id=YOUR-CLIENT-ID&redirect_uri=YOUR-REDIRECT-URI"
-if st.button("Login"):
-    st.write("Redirecting to login...")
-    st.write(f"[Login with Auth0]({login_url})")
-
-# Display additional footer or disclaimer if needed
-st.markdown("---")
-st.markdown("© 2024 Your Company Name. All rights reserved.")
+if __name__ == "__main__":
+    main()
