@@ -58,7 +58,7 @@ def display_page():
     add_custom_styles()
 
     # Navbar
-    st.markdown('<div class="navbar">[Platform Name] - Telemedicine</div>', unsafe_allow_html=True)
+    st.markdown('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
 
     # Check if the user is logged in
     if st.session_state['user_info']:
@@ -83,7 +83,7 @@ def display_page():
         )
         
         # Anchor tag styled without default styling
-        st.markdown(f'<a href="{login_url}" class="no-style-link"><button>Login</button></a>', unsafe_allow_html=True)
+        st.markdown(f'<a href="{login_url}" class="no-style-link"><button class="btn btn-success">Login</button></a>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
