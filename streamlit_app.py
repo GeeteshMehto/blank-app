@@ -87,7 +87,10 @@ def display_page():
         )
 
         # Use an anchor tag for login redirection with a more visually appealing button
-        st.markdown(f'<a href="{login_url}" target="_self" class="stButton"><button>Login</button></a>', unsafe_allow_html=True)
+        st.markdown(f'
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <a href="{login_url}" target="_self" class="stButton"><button type="button" class="btn btn-success">Login</button></a>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
