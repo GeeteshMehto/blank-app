@@ -19,6 +19,10 @@ def add_background_color():
             background-color: {background_color};
             color:black;
         }}
+
+        .st.button{{
+            color:white;
+        }}
         </style>
         """,
         unsafe_allow_html=True
