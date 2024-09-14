@@ -37,6 +37,7 @@ def add_custom_styles():
             padding: 0.5em 1em;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         div.stButton > button:hover {
@@ -47,7 +48,7 @@ def add_custom_styles():
         .main-header {
             color: black;
         }
-        
+
         .sub-header {
             color: blue;
         }
@@ -74,19 +75,19 @@ def display_page():
         st.markdown('<h2 class="sub-header">Bridging the Gap in Healthcare</h2>', unsafe_allow_html=True)
         st.markdown(
             """
-            Are you a **hospital** or a **medical expert** looking to provide high-quality healthcare services to patients, no matter their location?  
-            
+            Are you a **hospital** or a **medical expert** looking to provide high-quality healthcare services to patients, no matter their location?
+
             At **[Platform Name]**, we bridge the gap between patients in remote areas and medical professionals like you through advanced **telemedicine technology**.
-            
-            **New to [Platform Name]?** Register as a hospital or medical expert to begin delivering remote healthcare.  
-            
-            **Sign up now** and start making a difference in patients' lives through telemedicine.  
+
+            **New to [Platform Name]?** Register as a hospital or medical expert to begin delivering remote healthcare.
+
+            **Sign up now** and start making a difference in patients' lives through telemedicine.
             Your expertise can save lives.
             """
         )
-        
-        # Use an anchor tag for login redirection
-        st.markdown(f'<a href="{login_url}" target="_self" class="stButton"><Button>Login</Button></a>', unsafe_allow_html=True)
+
+        # Use an anchor tag for login redirection with a more visually appealing button
+        st.markdown(f'<a href="{login_url}" target="_self" class="stButton"><button>Login</button></a>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
@@ -94,7 +95,7 @@ def main():
         page_icon="🏥",
         layout="centered",
     )
-    
+
     # Display the appropriate page based on login state
     display_page()
 
