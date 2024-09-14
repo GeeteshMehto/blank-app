@@ -34,13 +34,17 @@ def add_custom_styles():
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 0.5em 1em;
-            border-radius: 5px;
+            padding: 0.75em 1.5em;  /* Increased padding for a more prominent button */
+            border-radius: 8px;  /* Increased border radius for a rounded look */
             cursor: pointer;
+            font-size: 16px;  /* Adjust font size for better readability */
+            font-weight: bold;  /* Bold font for emphasis */
+            transition: background-color 0.3s, transform 0.3s;  /* Smooth transition for hover effects */
         }
 
         div.stButton > button:hover {
             background-color: #0056b3;
+            transform: scale(1.05);  /* Slightly enlarge button on hover */
         }
 
         /* Header and subheader styling */
