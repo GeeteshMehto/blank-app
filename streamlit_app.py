@@ -11,14 +11,27 @@ if 'user_info' not in st.session_state:
 def display_page():
     # Check if the user is logged in
     if st.session_state['user_info']:
-        # Display welcome message if user is logged in
+        # Display welcome message if the user is logged in
         st.title(f"Welcome {st.session_state['user_info']['name']}!")
         st.markdown(f"[Logout]({logout_url})")
     else:
-        # Display login section if user is not logged in
-        st.title("re you a hospital or a medical expert looking to provide high-quality healthcare services to patients, no matter their location? At [Platform Name], we bridge the gap between patients in remote areas and medical professionals like you through advanced telemedicine technology.New to [Platform Name]? Register as a hospital or medical expert to begin delivering remote healthcare.Sign up now and start making a difference in patients' lives through telemedicine. Your expertise can save lives.")
+        # Display information and login button if the user is not logged in
+        st.title("Welcome to [Platform Name]")
+        st.header("Bridging the Gap in Healthcare")
+        st.markdown(
+            """
+            Are you a **hospital** or a **medical expert** looking to provide high-quality healthcare services to patients, no matter their location?  
+            
+            At **[Platform Name]**, we bridge the gap between patients in remote areas and medical professionals like you through advanced **telemedicine technology**.
+            
+            **New to [Platform Name]?** Register as a hospital or medical expert to begin delivering remote healthcare.  
+            
+            **Sign up now** and start making a difference in patients' lives through telemedicine.  
+            Your expertise can save lives.
+            """
+        )
         
-        # Inject JavaScript to auto-redirect to login
+        # Inject JavaScript to auto-redirect to login on button click
         if st.button("Login"):
             # JavaScript to auto-redirect
             redirect_script = f"""
@@ -30,8 +43,8 @@ def display_page():
 
 def main():
     st.set_page_config(
-        page_title="Auth0 Example",
-        page_icon="🔐",
+        page_title="[Platform Name] Telemedicine",
+        page_icon="🏥",
         layout="centered",
     )
     
