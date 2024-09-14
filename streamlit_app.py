@@ -29,20 +29,15 @@ def add_custom_styles():
             color: black;
         }
 
-        /* Button styling */
-        .button-link {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;  /* Ensure text color is white */
-            padding: 0.5em 1em;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
+        /* Anchor tag styling */
+        .no-style-link {
+            color: #007bff;  /* Set the text color */
+            text-decoration: none;  /* Remove underline */
         }
 
-        .button-link:hover {
-            background-color: #0056b3;
+        .no-style-link:hover {
+            color: #0056b3;  /* Change color on hover */
+            text-decoration: none;  /* Ensure no underline on hover */
         }
 
         /* Header and subheader styling */
@@ -87,8 +82,8 @@ def display_page():
             """
         )
         
-        # Anchor tag styled as a button
-        st.markdown(f'<a href="{login_url}" class="button-link">Login</a>', unsafe_allow_html=True)
+        # Anchor tag styled without default styling
+        st.markdown(f'<a href="{login_url}" class="no-style-link">Login</a>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
