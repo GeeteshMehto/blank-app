@@ -85,9 +85,8 @@ def display_page():
             """
         )
         
-        # Inject JavaScript to auto-redirect to login on button click
-        if st.button("Login"):
-            st.markdown(f'<script type="text/javascript">window.location.href = "{login_url}";</script>', unsafe_allow_html=True)
+        # Use an anchor tag for login redirection
+        st.markdown(f'<a href="{login_url}" target="_self" class="stButton">Login</a>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
