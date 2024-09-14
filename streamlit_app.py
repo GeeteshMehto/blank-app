@@ -11,7 +11,7 @@ if 'user_info' not in st.session_state:
 # Add custom CSS to change the background color
 def add_background_color():
     # Change the background color here (e.g., #f0f0f0 for a light gray background)
-    background_color = "d4e6f2"
+    background_color = "#d4e6f2"
     st.markdown(
         f"""
         <style>
