@@ -67,15 +67,15 @@ def display_page():
         st.markdown(f"[Logout]({logout_url})")
     else:
         # Display information and login button if the user is not logged in
-        st.markdown('<h1 class="main-header">Welcome to [Platform Name]</h1>', unsafe_allow_html=True)
+        st.markdown('<h1 class="main-header">Welcome to BeyondClinic</h1>', unsafe_allow_html=True)
         st.markdown('<h2 class="sub-header">Bridging the Gap in Healthcare</h2>', unsafe_allow_html=True)
         st.markdown(
             """
             Are you a **hospital** or a **medical expert** looking to provide high-quality healthcare services to patients, no matter their location?  
             
-            At **[Platform Name]**, we bridge the gap between patients in remote areas and medical professionals like you through advanced **telemedicine technology**.
+            At **BeyondClinic**, we bridge the gap between patients in remote areas and medical professionals like you through advanced **telemedicine technology**.
             
-            **New to [Platform Name]?** Register as a hospital or medical expert to begin delivering remote healthcare.  
+            **New to BeyondClinic?** Register as a hospital or medical expert to begin delivering remote healthcare.  
             
             **Sign up now** and start making a difference in patients' lives through telemedicine.  
             Your expertise can save lives.
