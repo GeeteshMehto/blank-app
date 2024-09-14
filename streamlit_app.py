@@ -16,7 +16,7 @@ def display_page():
         st.markdown(f"[Logout]({logout_url})")
     else:
         # Display login section if user is not logged in
-        st.title("Welcome Guest")
+        st.title("re you a hospital or a medical expert looking to provide high-quality healthcare services to patients, no matter their location? At [Platform Name], we bridge the gap between patients in remote areas and medical professionals like you through advanced telemedicine technology.New to [Platform Name]? Register as a hospital or medical expert to begin delivering remote healthcare.Sign up now and start making a difference in patients' lives through telemedicine. Your expertise can save lives.")
         
         # Inject JavaScript to auto-redirect to login
         if st.button("Login"):
