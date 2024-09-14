@@ -15,11 +15,18 @@ def display_page():
         st.title(f"Welcome {st.session_state['user_info']['name']}!")
         st.markdown(f"[Logout]({logout_url})")
     else:
-        # Display login button if user is not logged in
+        # Display login section if user is not logged in
         st.title("Welcome Guest")
+        
+        # Inject JavaScript to auto-redirect to login
         if st.button("Login"):
-            # Redirect to the login URL (Django Auth0 endpoint)
-            st.write(f"[Redirecting to login...]({login_url})")
+            # JavaScript to auto-redirect
+            redirect_script = f"""
+            <script type="text/javascript">
+                window.location.href = "{login_url}";
+            </script>
+            """
+            st.markdown(redirect_script, unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
