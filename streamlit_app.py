@@ -86,7 +86,7 @@ def display_page():
         )
         
         # Use an anchor tag for login redirection
-        st.markdown(f'<a href="{login_url}" target="_self" class="stButton">Login</a>', unsafe_allow_html=True)
+        st.markdown(f'<a href="{login_url}" target="_self" class="stButton"><Button>Login</Button></a>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
