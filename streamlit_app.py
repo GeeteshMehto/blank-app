@@ -59,9 +59,6 @@ def add_custom_styles():
 def display_page():
     # Add custom styles
     add_custom_styles()
-
-    # Navbar
-    # st.markdown('<div class="navbar">[Platform Name] - Telemedicine</div>', unsafe_allow_html=True)
     
     # Check if the user is logged in
     if st.session_state['user_info']:
@@ -93,7 +90,8 @@ def display_page():
                 window.location.href = "{login_url}";
             </script>
             """
-            st.markdown(redirect_script, unsafe_allow_html=True)
+            # Use st.write to render the script correctly
+            st.write(redirect_script, unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
