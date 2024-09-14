@@ -37,7 +37,6 @@ def add_custom_styles():
             padding: 0.5em 1em;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
         div.stButton > button:hover {
@@ -48,7 +47,7 @@ def add_custom_styles():
         .main-header {
             color: black;
         }
-
+        
         .sub-header {
             color: blue;
         }
@@ -62,7 +61,7 @@ def display_page():
     add_custom_styles()
 
     # Navbar
-    # st.markdown('<div class="navbar">[Platform Name] - Telemedicine</div>', unsafe_allow_html=True)
+    st.markdown('<div class="navbar">[Platform Name] - Telemedicine</div>', unsafe_allow_html=True)
 
     # Check if the user is logged in
     if st.session_state['user_info']:
@@ -75,19 +74,20 @@ def display_page():
         st.markdown('<h2 class="sub-header">Bridging the Gap in Healthcare</h2>', unsafe_allow_html=True)
         st.markdown(
             """
-            Are you a **hospital** or a **medical expert** looking to provide high-quality healthcare services to patients, no matter their location?
-
+            Are you a **hospital** or a **medical expert** looking to provide high-quality healthcare services to patients, no matter their location?  
+            
             At **[Platform Name]**, we bridge the gap between patients in remote areas and medical professionals like you through advanced **telemedicine technology**.
-
-            **New to [Platform Name]?** Register as a hospital or medical expert to begin delivering remote healthcare.
-
-            **Sign up now** and start making a difference in patients' lives through telemedicine.
+            
+            **New to [Platform Name]?** Register as a hospital or medical expert to begin delivering remote healthcare.  
+            
+            **Sign up now** and start making a difference in patients' lives through telemedicine.  
             Your expertise can save lives.
             """
         )
-
-        # Use an anchor tag for login redirection with a more visually appealing button
-        st.markdown(f'<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><a href="{login_url}" target="_self" class="stButton"><button type="button" class="btn btn-success">Login</button></a>', unsafe_allow_html=True)
+        
+        # Inject JavaScript to auto-redirect to login on button click
+        if st.button("Login"):
+            st.markdown(f'<script type="text/javascript">window.location.href = "{login_url}";</script>', unsafe_allow_html=True)
 
 def main():
     st.set_page_config(
@@ -95,7 +95,7 @@ def main():
         page_icon="🏥",
         layout="centered",
     )
-
+    
     # Display the appropriate page based on login state
     display_page()
 
