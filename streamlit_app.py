@@ -10,18 +10,28 @@ if 'user_info' not in st.session_state:
 
 # Add custom CSS to change the background color
 def add_background_color():
-    # Change the background color here (e.g., #f0f0f0 for a light gray background)
+    # Change the background color here (e.g., #d4e6f2 for a light blue background)
     background_color = "#d4e6f2"
     st.markdown(
         f"""
         <style>
         .stApp {{
             background-color: {background_color};
-            color:black;
+            color: black;
         }}
 
-        .st.button{{
-            color:white;
+        /* Style buttons */
+        div.stButton > button {{
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }}
+
+        div.stButton > button:hover {{
+            background-color: #0056b3;
         }}
         </style>
         """,
