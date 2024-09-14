@@ -86,9 +86,29 @@ def display_page():
             """
         )
         
-        # Provide a link for login
-        login_link = f'<a href="{login_url}" target="_blank"><button>Login</button></a>'
-        st.markdown(login_link, unsafe_allow_html=True)
+        # Provide a custom-styled button for login
+        st.markdown(
+            f"""
+            <a href="{login_url}" target="_blank">
+                <button style="
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 0.75em 1.5em;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    display: inline-block;
+                    transition: background-color 0.3s, transform 0.3s;
+                " onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#007bff'; this.style.transform='scale(1)'">
+                    Login
+                </button>
+            </a>
+            """,
+            unsafe_allow_html=True
+        )
 
 def main():
     st.set_page_config(
