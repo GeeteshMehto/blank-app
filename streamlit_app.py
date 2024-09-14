@@ -17,6 +17,7 @@ def add_background_color():
         <style>
         .stApp {{
             background-color: {background_color};
+            color:black;
         }}
         </style>
         """,
