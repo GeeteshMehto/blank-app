@@ -87,7 +87,7 @@ def display_page():
 
 def main():
     st.set_page_config(
-        page_title="[Platform Name] Telemedicine",
+        page_title="BeyondClinic",
         page_icon="🏥",
         layout="centered",
     )
